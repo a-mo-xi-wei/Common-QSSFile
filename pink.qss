@@ -1,0 +1,439 @@
+﻿/*@@@@@ 通用设置 */
+QWidget {
+    background-color: rgb(231,166,190);
+    color:rgb(3,32,82);
+}
+
+/*不能有边框的控件*/
+QPushButton, QLabel,  QRadioButton, QCheckBox {
+    border: none;
+}
+
+/*背景透明的控件*/
+QPushButton, QLabel, QRadioButton, QCheckBox,QComboBox,QDateEdit,QDateTimeEdit {
+    background-color: transparent;
+}
+
+/*有边框的控件*/
+QLineEdit, QComboBox,QDateEdit,QDateTimeEdit {
+    border: 1px solid rgb(237,188,206);
+	border-radius: 5px;
+    height:25px;
+}
+
+/*鼠标移上去背景变色的控件*/
+QPushButton:hover, QLineEdit:hover, QComboBox:hover,
+QDateEdit:hover,QDateTimeEdit:hover{
+    background-color:rgb(237,188,206);
+}
+
+QComboBox::down-arrow, QDateEdit::down-arrow {
+    image: url(':/SqlImages/tool/drop-down-hover.png');
+}
+
+QComboBox::drop-down,QDateEdit::drop-down{
+    border:none;
+    min-width:25px;
+}
+
+/*@@@@@ QTableView样式(PagingTableView)*/
+QTableView {
+    background-color: rgb(234,174,197);
+}
+/*--设置表头颜色*/
+QTableView QHeaderView::section{
+	border: none;
+    background-color: rgb(231,166,190);
+}
+/*--设置角落按钮颜色*/
+QTableView QTableCornerButton::section{
+    background-color: rgb(231,166,190);
+}
+/*--鼠标悬停在表头上某个列上*/
+QTableView QHeaderView::section:hover{
+    background-color: rgb(248,228,236);
+}
+/*--鼠标选择了表头某个列变色*/
+QTableView QHeaderView::section:pressed{
+    background-color: rgb(248,228,236);
+}
+/*--每个单元格设置 */
+QTableView::item{ 
+    border: none;
+    background-color: rgb(234,174,197); 
+}
+/*--单元格选中颜色*/
+QTableView::item:selected{ 
+    background-color: rgb(248,129,161); 
+    selection-color: white; /*文字颜色*/
+}
+/*--交替变色，另一行*/
+QTableView::item:alternate:!selected{
+    background-color: rgb(237,188,206);    
+}
+
+/*@@@@@ QTreeView */
+QTreeView {
+	alternate-background-color: rgb(237,188,206);
+	background-color: rgb(234,174,197);
+	show-decoration-selected: 1; /*设计item一行中的branch和item为一个整体，默认为0*/
+	font: normal 13pt "微软雅黑";
+}
+
+QTreeView QHeaderView::section {
+    border:none ;
+    background-color: rgb(234,174,197);
+    font:normal 15pt "微软雅黑";
+}
+
+QTreeView::item {
+   border: none;
+   height: 50px;
+}
+
+    /*--鼠标悬停*/
+    QTreeView::item:hover,
+    QTreeView::branch:hover {
+        background-color: rgb(248,129,161);
+    }
+
+/*--选中item时，item和前面的branch显示一样的颜色*/
+    QTreeView::item:selected,
+    QTreeView::branch:selected {
+        background-color: rgb(201,54,109);
+        color: rgb(255,88,77);
+    }
+
+/*--鼠标悬停，或选中*/
+    QTreeView::item:selected:hover,
+    QTreeView::branch:selected:hover {
+        background-color: rgb(248,129,161);
+        color: rgb(255,88,77);
+    }
+
+/*@@@@@@@设置水平滑动条的样式 */
+QScrollBar:horizontal {
+    border: 1px solid rgb(231,166,190);
+    background: rgb(231,166,190);
+    height: 10px;
+    margin: 0px 20px 0 20px;
+}
+/*--设置滑动条滑块样式*/
+QScrollBar::handle:horizontal {
+    background: rgb(237,188,206);
+    /*min-height: 20px;*/
+    border-radius:4px;
+}
+ QScrollBar::handle:horizontal:hover {
+    background: rgb(248,129,161);
+ }
+/*--设置右边按钮的背景颜色*/
+QScrollBar::add-line:horizontal {
+    /* border: 2px solid grey; */
+    background: rgb(231,166,190);
+    width: 20px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+/*--设置左边按钮的背景颜色*/
+QScrollBar::sub-line:horizontal {
+    /* border: 2px solid grey; */
+    background: rgb(231,166,190);
+    width: 20px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+/*--设置箭头左右*/
+QScrollBar:left-arrow:horizontal {
+    background:none;
+    /* border: 1px solid rgb(231,166,190);
+    background: url(':/SqlImages/arrow-left.png');*/
+}
+
+QScrollBar::right-arrow:horizontal {
+    background:none;
+   /* border: 1px solid rgb(231,166,190);
+    background: url(':/SqlImages/arrow-right.png');*/
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/*@@@@@@@设置垂直滑动条样式*/
+QScrollBar:vertical {
+    border: 1px solid rgb(231,166,190);
+    background: rgb(231,166,190);
+    width: 10px;
+    margin: 20px 0px 20px 0px;
+}
+/*--设置滑动条滑块样式*/
+QScrollBar::handle:vertical {
+    background: rgb(237,188,206);
+    /*min-height: 20px;*/
+    border-radius:4px;
+}
+QScrollBar::handle:vertical:hover {
+    background: rgb(248,129,161);
+}
+/*--设置下边按钮的背景颜色*/
+QScrollBar::add-line:vertical {
+    /* border: 2px solid grey; */
+    background: rgb(231,166,190);
+    height: 20px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+/*--设置左边按钮的背景颜色*/
+QScrollBar::sub-line:vertical {
+    /* border: 2px solid grey; */
+    background: rgb(231,166,190);
+    height: 20px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+/*--设置箭头左右*/
+QScrollBar::up-arrow:vertical
+{
+    background:none;
+    /*border: 1px solid rgb(231,166,190);
+    background: url(':/SqlImages/arrow-up.png');*/
+}
+
+QScrollBar::down-arrow:vertical {
+    background:none;
+    /*border: 1px solid rgb(231,166,190);
+    background: url(':/SqlImages/arrow-down.png');*/
+}
+
+QScrollBar::add-page:vertical, 
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/*@@@@@菜单*/
+QMenu {
+     background-color: rgba(231,166,190,230);
+     margin: 6px; /* some spacing around the menu */
+     padding-top:6px;
+     padding-bottom:6px;
+     border-radius:6px;
+ }
+
+ QMenu::item {
+     padding: 2px 25px 2px 20px;
+     border: 1px solid transparent; /* reserve space for selection border */
+ }
+
+ QMenu::item:selected {
+     background: rgba(234,174,197, 230);
+ }
+ QMenu::icon
+ {
+     padding-left:30px;
+ }
+ QMenu::icon:checked { /* appearance of a 'checked' icon */
+     background: gray;
+     border: 1px inset gray;
+     position: absolute;
+     top: 1px;
+     right: 1px;
+     bottom: 1px;
+     left: 1px;
+ }
+
+ QMenu::separator {
+     height: 1px;
+     background: rgb(237,188,206);
+     margin-top: 5px;
+     margin-bottom: 5px;
+ }
+
+ QMenu::indicator {
+     padding-left:15px;
+     width:13px;
+     height:13px;
+ }
+
+ QMenu::indicator:non-exclusive:checked {
+    image:url(:/assets/images/checked.png);
+ }
+
+
+/*ToolBar——分页工具栏*/
+QWidget#toolBar{
+    background-color:rgb(231,166,190);
+}
+
+QWidget#toolBar QComboBox,
+QWidget#toolBar QDateEdit,
+QWidget#toolBar QLineEdit {
+    min-width: 100px;
+    max-width: 150px;
+    min-height:25px;
+    max-height:25px;
+}
+
+
+QWidget#toolBar QPushButton{
+    width:32px; 
+    height: 32px;
+}
+
+QPushButton#openFileBtn {
+   icon: url(':/assets/images/tool/add.png');
+   min-width: 60px;
+}
+
+QPushButton#entryBtn {
+    icon: url(':/assets/images/tool/entry.png');
+    min-width: 60px;
+}
+
+QPushButton#searchBtn {
+    icon: url(':/assets/images/tool/search.png');
+    min-width: 60px;
+}
+
+QPushButton#delBtn {
+    icon: url(':/assets/images/tool/delete.png');
+    min-width: 60px;
+}
+
+QPushButton#exportBtn {
+    icon: url(':/assets/images/tool/export.png');
+    min-width: 60px;
+}
+
+/* PagingBar——分页栏*/
+QWidget#pagingBar QPushButton {
+	width: 32px;
+	height: 32px;
+}
+
+QPushButton#firstPageBtn {
+	/*background-image:url(':/SqlImages/firstpage.png'); #通过这个设置图片会很大*/
+	icon:url(':/SqlImages/firstpage.png');
+}
+
+QPushButton#prevPageBtn {
+	icon:url(':/SqlImages/prevpage.png');
+}
+
+QPushButton#nextPageBtn {
+	icon:url(':/SqlImages/nextpage.png');
+}
+
+QPushButton#lastPageBtn {
+	icon:url(':/SqlImages/lastpage.png');
+}
+
+QPushButton#refreshBtn {
+	icon:url(':/SqlImages/refresh.png');
+}
+
+QLineEdit#pageNumberEdit {
+	/*border:1px solid rgb(179,202,234);*/
+	border-radius:5px;
+    min-width:40px;
+	max-width: 50px;
+    max-height:20px;
+}
+
+/*@AdminFlowAnalysisPage 流量数据分析页*/
+QWidget#AdminFlowAnalysisPage .QWidget {
+	background-color:black;
+	border-radius:10px;
+}
+
+QWidget#AdminFlowAnalysisPage QLabel#coreLabel {
+    color: white;
+	background:none;
+	font:bold 19px '宋体';
+}
+
+QWidget#AdminFlowAnalysisPage QPushButton#monthDataBtn,#yearDataBtn {
+    color: white;
+	background:none;
+	font:bold 19px '宋体';
+}
+
+QWidget#AdminFlowAnalysisPage QPushButton#monthDataBtn:checked,#yearDataBtn:checked {
+	border:1px solid rgb(7,193,96);
+	border-radius:15px;
+	color:rgb(7,193,96);
+}
+
+QWidget#AdminFlowAnalysisPage QPushButton#coreDataExportBtn,#month_yeard_DataExportBtn {
+	border:none;
+	background:none;
+	color:rgb(0,174,236);
+	min-width:100px;
+}
+
+QWidget#AdminFlowAnalysisPage QLineEdit#year_month_edit{
+    max-width:130px;
+}
+
+
+
+/*@@@@@ 设置界面 settingsDlg */
+/*-- 导航 */
+QDialog#settingsDlg QWidget#navBar {
+    min-width: 130px;
+    background-color: rgb(234,174,197);
+}
+
+QDialog#settingsDlg QWidget#navBar QPushButton{
+   width:100px;
+   height:35px;
+   border-radius:8px;
+}
+
+QDialog#settingsDlg QWidget#navBar QPushButton:hover {
+    background-color: rgb(248,129,161);
+}
+
+QDialog#settingsDlg QWidget#navBar QPushButton:checked {
+    background-color: rgb(240,202,217);
+    color: rgb(255,88,77);
+}
+
+/*-- 内容页*/
+QDialog#settingsDlg .QWidget {
+    background-color: rgb(231,166,190);
+}
+
+QDialog#settingsDlg QWidget#titleBar {
+    background-color: rgb(231,166,190);
+    min-height: 32px;
+    max-height: 32px;
+}
+
+QDialog#settingsDlg QWidget#titleBar QPushButton#closeBtn{
+    image:url(':/assets/images/quit.png');
+    width:45px;
+    min-height:32px;
+    max-height:32px;
+}
+
+QDialog#settingsDlg QWidget#titleBar QPushButton#closeBtn:hover{
+    background-color:red;
+}
+
+/*-- 具体子页设置*/
+QPushButton#changeProfileBtn {
+    border:1px solid rgb(87,88,89);
+    border-radius:5px;
+    width:57px;
+    height:25px;
+    color:rgb(150,151,153)
+}
+
+QPushButton#changeProfileBtn:hover {
+    background-color:transparent;
+    border-color:rgb(220,223,229);
+    color:white;
+}
+
